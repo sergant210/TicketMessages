@@ -1,8 +1,6 @@
 ## TicketMessages
 
-The addition for the Tickets.
-
-Put the chunk TicketMessage where you want to get the personal messages interface.
+An addition for the Tickets.
 
 ## How to use
 
