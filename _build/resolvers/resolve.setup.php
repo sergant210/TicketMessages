@@ -16,7 +16,7 @@ if ($object->xpdo) {
 		case xPDOTransport::ACTION_UPGRADE:
 			// Checking and installing required packages
 			$packages = array(
-				'Tickets' => array(
+				'tickets' => array(
 					'version_major' => 1,
 					'version_minor:>=' => 4,
 				)
