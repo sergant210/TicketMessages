@@ -1,0 +1,5 @@
+Changelog for TicketMessages.
+
+1.0.0-beta
+==============
+- Initial release.
