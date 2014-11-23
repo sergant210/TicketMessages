@@ -2,7 +2,6 @@
 /** @var array $scriptProperties */
 if (empty($thread)) {$scriptProperties['thread'] = $modx->getOption('thread', $scriptProperties, 'resource-'.$modx->resource->id, true);}
 
-if (empty($message_user)) $message_user = 0;
 if (!isset($modx->resource) && isset($_SESSION['TicketComments']['scriptProperties']) ) {
 	$modx->resource = $modx->getObject('modResource',$_SESSION['TicketComments']['scriptProperties']['resource']);
 }
@@ -22,7 +21,6 @@ $subscribers = array_map(intval,$matches[0]);
 
 /** @var Tickets $Tickets */
 $Tickets = $modx->getService('tickets','Tickets',$modx->getOption('tickets.core_path',null,$modx->getOption('core_path').'components/tickets/').'model/tickets/',$scriptProperties);
-$Tickets->initialize($modx->context->key, $scriptProperties);
 
 /** @var pdoFetch $pdoFetch */
 $fqn = $modx->getOption('pdoFetch.class', null, 'pdotools.pdofetch', true);
