@@ -36,7 +36,7 @@ if ($modx->user->hasSessionContext('mgr') && !empty($showLog)) {
 $msg_refresh_interval = $modx->getOption('tm.msg_refresh_interval', null, '20')*1000;
 //Регистрируем стили
 //Если Bootstrap уже грузится, то отключите загрузку
-$modx->regClientCSS($modx->getOption('assets_url').'components/ticketmessages/css/bootstrap.min.css');
+$modx->regClientCSS($modx->getOption('assets_url').'components/ticketmessages/css/lib/bootstrap.min.css');
 $modx->regClientCSS($modx->getOption('assets_url').'components/ticketmessages/css/messages.css');
 //Регистрируем скрипты
 $modx->regClientStartupScript('<script type="text/javascript">var msg_refresh_interval='.$msg_refresh_interval.';</script>', true);
