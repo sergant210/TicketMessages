@@ -84,12 +84,17 @@ var Messages = {
 
 			$.post(TicketsConfig.actionUrl, {action: 'message/getlist', thread: thread, ctx: TicketsConfig.ctx}, function(response) {
 				if (response.success == true ) {
-					$("#comments").html($(response.data));
+					$("#comments").html(response.data);
 					var count = $('.ticket-comment').size();
 					$('.messages-count', '.usersList .active').text(count);
-					if ($(user).data('thread-closed') == false) $("#comment-form").show();
-					Messages.utils.goto('comment-form');
-					$('#comment-editor').focus();
+					if ($(user).data('thread-closed') == false) {
+						$("#comment-form").show();
+						Messages.utils.goto('comment-form');
+						$('#comment-editor').focus();
+					} else {
+						$("#comment-form").hide();
+						Messages.utils.goto('thread-alert');
+					}
 				} else {
 					$("#comments").html(response.message);
 					$("#comment-form").hide();

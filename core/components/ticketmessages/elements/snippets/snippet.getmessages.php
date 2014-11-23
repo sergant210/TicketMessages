@@ -132,7 +132,7 @@ if (!empty($rows) && is_array($rows)) {
 	$output = implode($outputSeparator, $output);
 }
 if ($thread->get('closed')) {
-	$output .= '<li class="alert alert-danger thread-alert">Тема закрыта!</li>';
+	$output .= '<li id="thread-alert" class="alert alert-danger">Тема закрыта!</li>';
 }
 if ($modx->user->hasSessionContext('mgr') && !empty($showLog)) {
 	$output .= '<pre class="CommentsLog">' . print_r($pdoFetch->getTime(), 1) . '</pre>';

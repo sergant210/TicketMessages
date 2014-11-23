@@ -6,7 +6,7 @@
 .panel-widget .panel-heading {overflow: hidden;}
 .panel > .list-group:last-child .list-group-item:last-child {	border-radius: 0;border-bottom: 1px solid #ddd;}
 .thread-closed {background-color:red !important;color: #FFF !important;}
-.thread-alert {margin-left: 35px;margin-right:35px;}
+#thread-alert {margin-left: 35px;margin-right:35px;}
 .well {background-color: transparent;border: none;border-radius: 4px;box-shadow: none;margin-bottom: 0;padding: 0;}
 blockquote {border-left: 5px solid #eeeeee;color:#777;font-size: 14px;margin: 0 0 18px;padding: 10px;}
 #comment-new-link {text-shadow: none;}
