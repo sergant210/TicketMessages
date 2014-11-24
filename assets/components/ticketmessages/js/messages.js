@@ -115,6 +115,7 @@ var Messages = {
 			if ($(button).hasClass('send-message')) {
 				action = 'message/save';
 			}
+			$('[name="thread"]', form).val($(".usersList a.active").data('thread'));
 			$(form).ajaxSubmit({
 				data: {action: action}
 				,url: TicketsConfig.actionUrl
