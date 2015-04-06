@@ -19,9 +19,12 @@ $modx->error->message = null;
 // Get properties
 $properties = array();
 /* @var TicketThread $thread */
-if (!empty($_REQUEST['thread']) && $thread = $modx->getObject('TicketThread', array('name' => $_REQUEST['thread']))) {
+if (!empty($_REQUEST['thread']) && $thread = $modx->getObject('TicketThread', array('name' => filter_input(INPUT_POST,'thread',FILTER_SANITIZE_SPECIAL_CHARS)))) {
 	if ($thread->get('closed') && $action == 'comment/getlist') die('{"success":false,"message":"Ветка закрыта."}');
 	$properties = $thread->get('properties');
+} else {
+	$properties['thread'] = filter_input(INPUT_POST,'thread',FILTER_SANITIZE_SPECIAL_CHARS);
+	$properties['resource'] = filter_input(INPUT_POST,'resource',FILTER_SANITIZE_NUMBER_INT);
 }
 
 // Switch context
@@ -31,7 +34,7 @@ if (!empty($thread) && $thread->resource && $resource = $thread->getOne('Resourc
 	$context = $resource->get('context_key');
 }
 elseif (!empty($_REQUEST['ctx']) && $modx->getCount('modContext', $_REQUEST['ctx'])) {
-	$context = $_REQUEST['ctx'];
+	$context = filter_input(INPUT_POST,'ctx',FILTER_SANITIZE_SPECIAL_CHARS);
 }
 if ($context != 'web') {
 	$modx->switchContext($context);
