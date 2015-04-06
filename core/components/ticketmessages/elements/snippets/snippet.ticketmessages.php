@@ -39,7 +39,7 @@ $msg_refresh_interval = $modx->getOption('tm.msg_refresh_interval', null, '20')*
 $modx->regClientCSS($modx->getOption('assets_url').'components/ticketmessages/css/lib/bootstrap.min.css');
 $modx->regClientCSS($modx->getOption('assets_url').'components/ticketmessages/css/messages.css');
 //Регистрируем скрипты
-$modx->regClientStartupScript('<script type="text/javascript">var msg_refresh_interval='.$msg_refresh_interval.';</script>', true);
+$modx->regClientStartupScript("<script type=\"text/javascript\">\n\tvar msg_refresh_interval=".$msg_refresh_interval.",\n\tresource=".$modx->resource->id.";\n</script>", true);
 $modx->regClientScript($modx->getOption('assets_url').'components/ticketmessages/js/messages.js');
 
 // Return output
