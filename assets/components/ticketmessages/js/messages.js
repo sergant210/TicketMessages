@@ -82,7 +82,7 @@ var Messages = {
 			var thread = $(user).data('thread');
 			if (!thread) {return false;}
 
-			$.post(TicketsConfig.actionUrl, {action: 'message/getlist', thread: thread, ctx: TicketsConfig.ctx}, function(response) {
+			$.post(TicketsConfig.actionUrl, {action: 'message/getlist', thread: thread, resource: resource,ctx: TicketsConfig.ctx}, function(response) {
 				if (response.success == true ) {
 					$("#comments").html(response.data);
 					var count = $('.ticket-comment').size();
