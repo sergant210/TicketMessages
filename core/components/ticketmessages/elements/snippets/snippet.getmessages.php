@@ -1,12 +1,11 @@
 <?php
 /** @var array $scriptProperties */
-if (empty($thread)) {$scriptProperties['thread'] = $modx->getOption('thread', $scriptProperties, 'resource-'.$modx->resource->id, true);}
+if (empty($thread)) {$scriptProperties['thread'] = $modx->getOption('thread', $scriptProperties, 'resource-'.$resource, true);}
 
 if (!isset($modx->resource) && isset($_SESSION['TicketComments']['scriptProperties']) ) {
 	$modx->resource = $modx->getObject('modResource',$_SESSION['TicketComments']['scriptProperties']['resource']);
 }
-
-$scriptProperties['resource'] = $modx->resource->id;
+//$scriptProperties['resource'] = $modx->resource->id;
 $scriptProperties['snippetPrepareComment'] = $modx->getOption('tickets.snippet_prepare_comment');
 
 if (empty($tplComments)) {$tplComments = 'tpl.Tickets.message.wrapper';}
@@ -34,7 +33,7 @@ if (!$thread = $modx->getObject('TicketThread', array('name' => $scriptPropertie
 	$thread = $modx->newObject('TicketThread');
 	$thread->fromArray(array(
 		'name' => $scriptProperties['thread'],
-		'resource' => $modx->resource->id,
+		'resource' => $resource,
 		'createdby' => $modx->user->id,
 		'createdon' => date('Y-m-d H:i:s'),
 		'subscribers' => $subscribers,
