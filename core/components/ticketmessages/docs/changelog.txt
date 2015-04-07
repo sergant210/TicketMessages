@@ -1,5 +1,9 @@
 Changelog for TicketMessages.
 
+1.0.1-pl
+==============
+- Fixed some bugs.
+
 1.0.0-beta
 ==============
 - Initial release.

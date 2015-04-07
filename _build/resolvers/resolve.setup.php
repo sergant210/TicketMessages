@@ -47,7 +47,7 @@ if ($object->xpdo) {
 				if ($response->isError()) {
 					$modx->log(modX::LOG_LEVEL_ERROR, $response->getMessages());
 				} else {
-					$userGroupid = $response->response['object']['id'];
+					$userGroupid = $response->getObject();
 					$ContextPolicy = $modx->getObject('modAccessPolicy',array('name' => 'Context'))->toArray();
 					$userTicketPolicy = $modx->getObject('modAccessPolicy',array('name' => 'TicketUserPolicy'))->toArray();
 					$policies = array($ContextPolicy,$userTicketPolicy);

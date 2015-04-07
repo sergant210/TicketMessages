@@ -4,7 +4,7 @@
 .messages-col2 {margin-left:20px;min-height:300px;min-width:600px;max-width: 90%;}
 .messages-col2 .panel-body{overflow-y: auto;}
 .panel-widget .panel-heading {overflow: hidden;}
-.panel > .list-group:last-child .list-group-item:last-child {	border-radius: 0;border-bottom: 1px solid #ddd;}
+.panel > .list-group:last-child .list-group-item:last-child {border-radius: 0;border-bottom: 1px solid #ddd;}
 .thread-closed {background-color:red !important;color: #FFF !important;}
 #thread-alert {margin-left: 35px;margin-right:35px;}
 .well {background-color: transparent;border: none;border-radius: 4px;box-shadow: none;margin-bottom: 0;padding: 0;}
@@ -31,8 +31,6 @@ blockquote {border-left: 5px solid #eeeeee;color:#777;font-size: 14px;margin: 0 
 .comment-new-link {display: none;}
 .ticket-comment-header {position: relative;}
 .ticket-comment:hover > .ticket-comment-body > .ticket-comment-header > .ticket-comment-dot-wrapper {display:block;}
-.ticket-comment-dot-wrapper {display:none;position:absolute;top:0;left:0;width:1px;height:1px;}
-.ticket-comment-dot {width:500px;height:5px;right:1px;top:9px;position:absolute;background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAFCAYAAACw/UeDAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QUTDRYgxxbUHAAAAFVJREFUGNO1kbENACEMxBwKJCRmICOw/xgZIaxAgZSGb34E4gVOPsNPRFySEAAzu2stxhjMOeX1SImI6+703nF3zjnPjUqtVVSVvTeqSmtNsm5LbfIBwCcf3dkm2FsAAAAASUVORK5CYII=) repeat-x 100% 0;}
 .ticket-comment-body {background: none repeat scroll 0 0 #fff;border: 1px solid #ccc;border-radius: 3px;margin-left: 35px;margin-right: 35px;position: relative;}
 .author-message .ticket-comment-body {}
 .message .ticket-comment-body:before,.message .ticket-comment-body:after {border-bottom-color: transparent !important;border-left-color: transparent !important;border-style: solid;	border-width: 5px;	content: " ";height: 0;	left: -11px;position: absolute;top: 10px;width: 0;}
