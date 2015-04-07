@@ -23,19 +23,17 @@ if (!empty($_REQUEST['thread']) && $thread = $modx->getObject('TicketThread', ar
 	if ($thread->get('closed') && $action == 'comment/getlist') die('{"success":false,"message":"Ветка закрыта."}');
 	$properties = $thread->get('properties');
 } else {
+	$properties = $_SESSION['ticketmessages']['sp'];
 	$properties['thread'] = filter_input(INPUT_POST,'thread',FILTER_SANITIZE_SPECIAL_CHARS);
-	$properties['resource'] = filter_input(INPUT_POST,'resource',FILTER_SANITIZE_NUMBER_INT);
 }
 
 // Switch context
-if (isset($properties['context'])) {$context = $properties['context'];} else {$context = 'web';}
-
-if (!empty($thread) && $thread->resource && $resource = $thread->getOne('Resource')) {
-	$context = $resource->get('context_key');
-}
-elseif (!empty($_REQUEST['ctx']) && $modx->getCount('modContext', $_REQUEST['ctx'])) {
+if (isset($properties['context'])) {
+	$context = $properties['context'];
+} elseif (!empty($_REQUEST['ctx']) && $modx->getCount('modContext', filter_input(INPUT_POST,'ctx',FILTER_SANITIZE_SPECIAL_CHARS))) {
 	$context = filter_input(INPUT_POST,'ctx',FILTER_SANITIZE_SPECIAL_CHARS);
-}
+} else {$context = 'web';}
+
 if ($context != 'web') {
 	$modx->switchContext($context);
 }
